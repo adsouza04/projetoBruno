@@ -84,50 +84,9 @@ public class Jogo {
 
                     switch (desafioDois) {
                         case "Sim":
-                        System.out.println("Este é o desafio 2 ");
-
-                        boolean completoDois = false;
-                        while (!completoDois) {
-                            
-                            System.out.println("\nFrase atual:");
-                            for (String item : operadorRelacional) {
-                                System.out.print(item + " ");
-                            }
-                            System.out.println();
-    
-                            System.out.print("Digite uma palavra para tentar preencher: ");
-                            String palpite = ler.nextLine();
-    
-                            boolean acertou = false;
-                            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                                if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
-                                    operadorRelacional[i] = relacionalOculto[i];
-                                    acertou = true;
-                                }
-                            }
-    
-                            if (acertou) {
-                                System.out.println("\nPalavra inserida.");
-                            } else {
-                                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                            }
-    
-                            
-                            completo = true;
-                            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                                if (operadorRelacional[i].contains("*")) {
-                                    completo = false;
-                                    break;
-                                }
-                            }
-                        }
-    
-                      
-                        System.out.println("\nParabéns! Você completou:");
-                        for (String item : operadorRelacional) {
-                            System.out.print(item + " ");
-                        }
-                        System.out.println(); 
+                        
+                        String dois = Menu.desafioDois("");
+                        System.out.println(dois);
                             
                         break;
 
@@ -142,50 +101,9 @@ public class Jogo {
 
                         switch (respostaDo) {
                             case "Sim":
-                            System.out.println("Este é o desafio 3 ");
-
-                            boolean completoTres = false;
-                            while (!completoTres) {
-                                
-                                System.out.println("\nFrase atual:");
-                                for (String item : operadorRelacional) {
-                                    System.out.print(item + " ");
-                                }
-                                System.out.println();
-        
-                                System.out.print("Digite uma palavra para tentar preencher: ");
-                                String palpite = ler.nextLine();
-        
-                                boolean acertou = false;
-                                for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                                    if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
-                                        operadorRelacional[i] = relacionalOculto[i];
-                                        acertou = true;
-                                    }
-                                }
-        
-                                if (acertou) {
-                                    System.out.println("\nPalavra inserida.");
-                                } else {
-                                    System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                                }
-        
-                                
-                                completo = true;
-                                for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                                    if (operadorRelacional[i].contains("*")) {
-                                        completo = false;
-                                        break;
-                                    }
-                                }
-                            }
-        
-                        
-                            System.out.println("\nParabéns! Você completou:");
-                            for (String item : operadorRelacional) {
-                                System.out.print(item + " ");
-                            }
-                            System.out.println(); 
+         
+                            String tres = Menu.desafioTres("");
+                            System.out.println(tres);
                                 
                             break;
 
@@ -200,50 +118,9 @@ public class Jogo {
 
                             switch (desafioQuatro) {
                                 case "Sim":
-                                System.out.println("Este é o desafio 4 ");
-
-                                boolean completoQuatro = false;
-                                while (!completoQuatro) {
-                                    
-                                    System.out.println("\nFrase atual:");
-                                    for (String item : operadorRelacional) {
-                                        System.out.print(item + " ");
-                                    }
-                                    System.out.println();
-            
-                                    System.out.print("Digite uma palavra para tentar preencher: ");
-                                    String palpite = ler.nextLine();
-            
-                                    boolean acertou = false;
-                                    for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                                        if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
-                                            operadorRelacional[i] = relacionalOculto[i];
-                                            acertou = true;
-                                        }
-                                    }
-            
-                                    if (acertou) {
-                                        System.out.println("\nPalavra inserida.");
-                                    } else {
-                                        System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                                    }
-            
-                                    
-                                    completo = true;
-                                    for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                                        if (operadorRelacional[i].contains("*")) {
-                                            completo = false;
-                                            break;
-                                        }
-                                    }
-                                }
-            
-                            
-                                System.out.println("\nParabéns! Você completou:");
-                                for (String item : operadorRelacional) {
-                                    System.out.print(item + " ");
-                                }
-                                System.out.println(); 
+                                
+                                String quatro = Menu.desafioQuatro("");
+                                System.out.println(quatro);
                                     
                                 break;
 
@@ -258,50 +135,9 @@ public class Jogo {
 
                                 switch (desafioCinco) {
                                     case "Sim":
-                                    System.out.println("Este é o desafio 2 ");
-
-                                    boolean completoCinco = false;
-                                    while (!completoCinco) {
-                                        
-                                        System.out.println("\nFrase atual:");
-                                        for (String item : operadorRelacional) {
-                                            System.out.print(item + " ");
-                                        }
-                                        System.out.println();
-                
-                                        System.out.print("Digite uma palavra para tentar preencher: ");
-                                        String palpite = ler.nextLine();
-                
-                                        boolean acertou = false;
-                                        for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                                            if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
-                                                operadorRelacional[i] = relacionalOculto[i];
-                                                acertou = true;
-                                            }
-                                        }
-                
-                                        if (acertou) {
-                                            System.out.println("\nPalavra inserida.");
-                                        } else {
-                                            System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                                        }
-                
-                                        
-                                        completo = true;
-                                        for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                                            if (operadorRelacional[i].contains("*")) {
-                                                completo = false;
-                                                break;
-                                            }
-                                        }
-                                    }
-                
-                                
-                                    System.out.println("\nParabéns! Você completou:");
-                                    for (String item : operadorRelacional) {
-                                        System.out.print(item + " ");
-                                    }
-                                    System.out.println(); 
+                                    
+                                    String cinco = Menu.desafioCinco("");
+                                    System.out.println(cinco);
                                         
                                     break;
 

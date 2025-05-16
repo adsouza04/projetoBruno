@@ -21,6 +21,212 @@ public class Menu {
 
     }
 
+    public static String desafioDois(String escolha){
+        
+        System.out.println("Este é o desafio 2 ");
+
+        boolean completoDois = false;
+        while (!completoDois) {
+            
+            System.out.println("\nFrase atual:");
+            for (String item : operadorRelacional) {
+                System.out.print(item + " ");
+            }
+            System.out.println();
+
+            System.out.print("Digite uma palavra para tentar preencher: ");
+            String palpite = ler.nextLine();
+
+            boolean acertou = false;
+            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
+                if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
+                    operadorRelacional[i] = relacionalOculto[i];
+                    acertou = true;
+                }
+            }
+
+            if (acertou) {
+                System.out.println("\nPalavra inserida.");
+            } else {
+                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+            }
+
+            
+            completo = true;
+            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
+                if (operadorRelacional[i].contains("*")) {
+                    completo = false;
+                    break;
+                }
+            }
+        }
+
+      
+        System.out.println("\nParabéns! Você completou:");
+        for (String item : operadorRelacional) {
+            System.out.print(item + " ");
+        }
+        System.out.println(); 
+
+        return escolha;
+    }
+
+    public static String desafioTres(String escolha ) {
+        Scanner ler = new Scanner(System.in);
+
+        System.out.println("Este é o desafio 3 ");
+
+        boolean completoTres = false;
+        while (!completoTres) {
+            
+            System.out.println("\nFrase atual:");
+            for (String item : operadorRelacional) {
+                System.out.print(item + " ");
+            }
+            System.out.println();
+
+            System.out.print("Digite uma palavra para tentar preencher: ");
+            String palpite = ler.nextLine();
+
+            boolean acertou = false;
+            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
+                if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
+                    operadorRelacional[i] = relacionalOculto[i];
+                    acertou = true;
+                }
+            }
+
+            if (acertou) {
+                System.out.println("\nPalavra inserida.");
+            } else {
+                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+            }
+
+            
+            completo = true;
+            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
+                if (operadorRelacional[i].contains("*")) {
+                    completo = false;
+                    break;
+                }
+            }
+        }
+
+    
+        System.out.println("\nParabéns! Você completou:");
+        for (String item : operadorRelacional) {
+            System.out.print(item + " ");
+        }
+        System.out.println(); 
+
+        return escolha;
+
+    }
+
+    public static String desafioQuatro(String escolha ) {
+        Scanner ler = new Scanner(System.in);
+
+        System.out.println("Este é o desafio 4 ");
+
+        boolean completoTres = false;
+        while (!completoTres) {
+            
+            System.out.println("\nFrase atual:");
+            for (String item : operadorRelacional) {
+                System.out.print(item + " ");
+            }
+            System.out.println();
+
+            System.out.print("Digite uma palavra para tentar preencher: ");
+            String palpite = ler.nextLine();
+
+            boolean acertou = false;
+            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
+                if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
+                    operadorRelacional[i] = relacionalOculto[i];
+                    acertou = true;
+                }
+            }
+
+            if (acertou) {
+                System.out.println("\nPalavra inserida.");
+            } else {
+                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+            }
+
+            
+            completo = true;
+            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
+                if (operadorRelacional[i].contains("*")) {
+                    completo = false;
+                    break;
+                }
+            }
+        }
+
+    
+        System.out.println("\nParabéns! Você completou:");
+        for (String item : operadorRelacional) {
+            System.out.print(item + " ");
+        }
+        System.out.println(); 
+
+        return escolha;
+
+    }
+
+    public static String desafioCinco(String escolha ) {
+        Scanner ler = new Scanner(System.in);
+
+        System.out.println("Este é o desafio 5 ");
+
+        boolean completoTres = false;
+        while (!completoTres) {
+            
+            System.out.println("\nFrase atual:");
+            for (String item : operadorRelacional) {
+                System.out.print(item + " ");
+            }
+            System.out.println();
+
+            System.out.print("Digite uma palavra para tentar preencher: ");
+            String palpite = ler.nextLine();
+
+            boolean acertou = false;
+            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
+                if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
+                    operadorRelacional[i] = relacionalOculto[i];
+                    acertou = true;
+                }
+            }
+
+            if (acertou) {
+                System.out.println("\nPalavra inserida.");
+            } else {
+                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+            }
+
+            
+            completo = true;
+            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
+                if (operadorRelacional[i].contains("*")) {
+                    completo = false;
+                    break;
+                }
+            }
+        }
+
+    
+        System.out.println("\nParabéns! Você completou:");
+        for (String item : operadorRelacional) {
+            System.out.print(item + " ");
+        }
+        System.out.println(); 
+
+        return escolha;
+
+    }
+
 
     // public static String limparTerminal(String msg ) {
 
