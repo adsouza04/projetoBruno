@@ -16,6 +16,22 @@ public class Menu {
 
     }
 
+        public static String Mensagem(String msg ) {
+
+        return msg;
+
+    }
+
+
+    // public static String limparTerminal(String msg ) {
+
+    //     for ( int i = 0; i < 50; i++ ){
+    //          System.out.println("");
+    //     }
+
+    //     return msg;
+
+    // }
 
     public static String Arrays(String msg ) {
 
