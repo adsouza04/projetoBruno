@@ -31,21 +31,24 @@ public class Menu {
          * (maior ou igual) e <= (menor ou igual).
          */
 
-        /* String[] operadorRelacional = {"Os", "operadores", "relacionais", "comparam", "dois", "valores", "e", "retornam", "true", "ou", "false", "como",  "==",  "!=",  ">", "<", ">=", "e", "<="};
-        /*
-         * Os operadores relacionais comparam dois valores e retornam true ou false, como == (igual), != (diferente), > (maior), < (menor), >=      
-         * (maior ou igual) e <= (menor ou igual).
-         */
+         String[] ifElse = {"O", "if", "else", "em", "Java",  "é",  "uma", "estrutura", "de", "controle",  "que", "permite", "executar", "blocos", "de", "código", "diferentes", "com","base", "em", "uma", "condição.", "Se", "a", "condição", "dentro", "do","if", "for", "verdadeira,", "o", "código",  "dentro",  "do","bloco", "if", "será", "executado.", "Caso", "contrário", "o", "código",  "dentro",  "do","bloco", "else", "será", "executado."};
+        /*O if else em Java é uma estrutura de controle que permite executar blocos de código diferentes com base em uma condição. Se a condição dentro do if for verdadeira, o código dentro do bloco if será executado. Caso contrário, o código dentro do bloco else será executado.*/
+
+         String[] ifElseOculto ={"O", "**", "****", "em", "Java", "é", "uma", "*********", "de","********", "que", "permite", "********", "******", "de", "código", "diferentes", "com", "****", "em", "uma", "********.", "Se", "a", "********", "dentro", "do", "**", "for", "**********", "o", "código", "dentro", "do", "*****", "**", "será", "executado.", "Caso", "contrário,", "o", "código", "dentro", "do", "******", "****", "será", "executado."}
 
 
-         String[] ifElse = {"if", "else", "estrutura", "controle", "executar", "blocos", "base",  "condição",  "condição", "if", "verdadeira","bloco", "if", "bloco", "else"};
-        /*O if else em Java é uma estrutura de controle que permite executar blocos de código diferentes com base em uma condição. Se a condição dentro do if for verdadeira, o código dentro do bloco if será executado. Caso contrário, o código dentro do bloco else será executado.
-         */
 
          String[] lacoRepeticao = {"laço", "repetição", "usado", "bloco", "várias", "vezes", "enquanto",  "verdadeira",  "automatizar", "repetitivas", "for","while", "do while"};
         /*Um laço de repetição em Java é usado para executar um bloco de código várias vezes, enquanto uma condição for verdadeira. Ele ajuda a automatizar tarefas repetitivas, como: for, while e do while.
          * 
         */
+
+        String[] lacoRepeticaoOculto = {"Um", "****", "de", "*********", "em", "Java", "é", "*****","para", "executar", "um", "*****", "de", "código", "******", "*****,", "********", "uma", "",  }
+
+
+
+
+
 
         String[] vetor = {"vetor", "estrutura", "dados", "armazena", "coleção", "mesmo", "tipo",  "índice",  "tamanho", "fixo", "armazenados","sequencial"};
         /*Um vetor em Java é uma estrutura de dados que armazena uma coleção de elementos do mesmo tipo, acessados por um índice. Ele possui um tamanho fixo e os elementos são armazenados de forma sequencial.
