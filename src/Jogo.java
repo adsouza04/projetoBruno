@@ -10,17 +10,8 @@ public class Jogo {
         // String limpar = Menu.limparTerminal("");
         // String arrays = Menu.Arrays("");
         
-        String[] relacionalOculto = {"Os","operadores",  "relacionais", "comparam", "dois", "valores", "e", "retornam", "true", "ou", "false,", "como", "==",  "!=",  ">", "<", ">=", "e", "<="};
-        /*
-        * Os operadores relacionais comparam dois valores e retornam true ou false, como == (igual), != (diferente), > (maior), < (menor), >=      
-        * (maior ou igual) e <= (menor ou igual).
-        */
-
+        String[] relacionalOculto =   {"Os", "operadores", "relacionais", "comparam", "dois", "valores", "e", "retornam", "true", "ou", "false,", "como", "==",  "!=",  ">", "<", ">=", "e", "<="};
         String[] operadorRelacional = {"Os", "**********", "***********", "********", "dois", "*******", "e", "********", "true", "ou", "false,", "como",  "**",  "**",  "*", "*", "**", "e", "**"};
-        /*
-        * Os operadores relacionais comparam dois valores e retornam true ou false, como == (igual), != (diferente), > (maior), < (menor), >=      
-        * (maior ou igual) e <= (menor ou igual).
-        */
 
         do {
             System.out.print("Escolha uma opção: ");
@@ -97,9 +88,9 @@ public class Jogo {
                         //---------------Desafio 3--------------//
 
                         System.out.println(mensagem);
-                        String respostaDo = ler.nextLine();
+                        String respostaTres = ler.nextLine();
 
-                        switch (respostaDo) {
+                        switch (respostaTres) {
                             case "Sim":
          
                             String tres = Menu.desafioTres("");
