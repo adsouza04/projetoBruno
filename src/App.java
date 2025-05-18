@@ -6,7 +6,7 @@ public class App {
         String[] jogo = Jogo.JogoJereca("");
 
         System.out.println(jogo);
-        
+
     }
 
 }

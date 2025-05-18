@@ -1,17 +1,11 @@
 import java.util.Scanner;
 
 public class Jogo {
-    
- public static String[] JogoJereca(String escolha) {
+
+    public static String[] JogoJereca(String escolha) {
         Scanner ler = new Scanner(System.in);
 
         String menu = Menu.MostrarMenu("");
-        String mensagem = Menu.Mensagem("Deseja continuar jogando?");
-        // String limpar = Menu.limparTerminal("");
-        // String arrays = Menu.Arrays("");
-        
-        String[] relacionalOculto =   {"Os", "operadores", "relacionais", "comparam", "dois", "valores", "e", "retornam", "true", "ou", "false,", "como", "==",  "!=",  ">", "<", ">=", "e", "<="};
-        String[] operadorRelacional = {"Os", "**********", "***********", "********", "dois", "*******", "e", "********", "true", "ou", "false,", "como",  "**",  "**",  "*", "*", "**", "e", "**"};
 
         do {
             System.out.print("Escolha uma opção: ");
@@ -20,144 +14,49 @@ public class Jogo {
 
             switch (escolha) {
                 case "1":
+                    Menu.limparTerminal("");
+                    // ---------------Desafio 1--------------//
 
-                    System.out.println("Este é o desafio 1 ");
+                    String desafioUm = Desafios.desafioUm("");
 
-                    boolean completo = false;
-                    while (!completo) {
-                        
-                        System.out.println("\nFrase atual:");
-                        for (String item : operadorRelacional) {
-                            System.out.print(item + " ");
-                        }
-                        System.out.println();
+                    System.out.println(desafioUm);
 
-                        System.out.print("Digite uma palavra para tentar preencher: ");
-                        String palpite = ler.nextLine();
+                    // ---------------Desafio 2--------------//
 
-                        boolean acertou = false;
-                        for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                            if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
-                                operadorRelacional[i] = relacionalOculto[i];
-                                acertou = true;
-                            }
-                        }
+                    String desafioDois = Desafios.desafioDois("");
 
-                        if (acertou) {
-                            System.out.println("\nPalavra inserida.");
-                        } else {
-                            System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                        }
+                    System.out.println(desafioDois);
 
-                        
-                        completo = true;
-                        for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                            if (operadorRelacional[i].contains("*")) {
-                                completo = false;
-                                break;
-                            }
-                        }
-                    }
+                    // ---------------Desafio 3--------------//
 
-                  
-                    System.out.println("\nParabéns! Você completou:");
+                    String desafioTres = Desafios.desafioTres("");
 
-                    for (String item : operadorRelacional) {
-                        System.out.print(item + " ");
-                    }
+                    System.out.println(desafioTres);
 
-                    System.out.println();
-                    
-                    //---------------Desafio 2--------------//
+                    // ---------------Desafio 4--------------//
 
-                    System.out.println("Deseja continuar jogando?");
-                    String desafioDois = ler.nextLine();
+                    String desafioQuatro = Desafios.desafioQuatro("");
 
-                    switch (desafioDois) {
-                        case "Sim":
-                        
-                        String dois = Menu.desafioDois("");
-                        System.out.println(dois);
-                            
-                        break;
+                    System.out.println(desafioQuatro);
 
-                        case "Não":
-                            System.out.println("Saindo do jogo... Obrigado por jogar! :)");
-                            break;
+                    // ---------------Desafio 5--------------//
 
-                        //---------------Desafio 3--------------//
+                    String desafioCinco = Desafios.desafioCinco("");
 
-                        System.out.println(mensagem);
-                        String respostaTres = ler.nextLine();
-
-                        switch (respostaTres) {
-                            case "Sim":
-         
-                            String tres = Menu.desafioTres("");
-                            System.out.println(tres);
-                                
-                            break;
-
-                            case "Não":
-                                System.out.println("Saindo do jogo... Obrigado por jogar! :)");
-                                break;
-
-                            //---------------Desafio 4--------------//
-
-                            System.out.println("Deseja continuar jogando?");
-                            String desafioQuatro = ler.nextLine();
-
-                            switch (desafioQuatro) {
-                                case "Sim":
-                                
-                                String quatro = Menu.desafioQuatro("");
-                                System.out.println(quatro);
-                                    
-                                break;
-
-                                case "Não":
-                                    System.out.println("Saindo do jogo... Obrigado por jogar! :)");
-                                    break;
-
-                                //---------------Desafio 5--------------//
-
-                                System.out.println("Deseja continuar jogando?");
-                                String desafioCinco = ler.nextLine();
-
-                                switch (desafioCinco) {
-                                    case "Sim":
-                                    
-                                    String cinco = Menu.desafioCinco("");
-                                    System.out.println(cinco);
-                                        
-                                    break;
-
-                                    case "Não":
-                                        System.out.println("Saindo do jogo... Obrigado por jogar! :)");
-                                        break;
-                        
-                                } 
-
-                            }
-
-                        }
-                    }
-                
+                    System.out.println(desafioCinco);
+                    break;
 
                 case "2":
                     System.out.println("Saindo do jogo...");
                     break;
+
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
                     break;
             }
-            
 
-        } while (escolha == "3");
+        } while (escolha.equals("3"));
 
-
-        return operadorRelacional;
-
+        return null;
     }
-
 }
