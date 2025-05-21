@@ -81,7 +81,7 @@ public class Desafios {
                 "*****", "**", "será", "executado.", "Caso", "contrário", "o", "código", "dentro", "do", "*****",
                 "****", "será", "executado." };
 
-        System.out.println("Deseja continuar jogando?");
+        System.out.println("Deseja jogar o desafio 2?");
         String resposta = ler.nextLine();
 
         if (resposta.equalsIgnoreCase("Sim")) {
@@ -147,7 +147,7 @@ public class Desafios {
                 "ela", "ajuda", "a", "***********", "tarefas", "***********", "como:", "***", "*****", "e",
                 "** *****" };
 
-        System.out.println("Deseja continuar jogando?");
+        System.out.println("Deseja jogar o desafio 3?");
         String desafioTres = ler.nextLine();
 
         if (desafioTres.equalsIgnoreCase("Sim")) {
@@ -213,7 +213,7 @@ public class Desafios {
                 "possui", "um", "*******", "****", "e", "os", "elementos", "são", "***********", "de", "forma",
                 "**********" };
 
-        System.out.println("Deseja continuar jogando?");
+        System.out.println("Deseja jogar o desafio 4?");
         String desafioQuatro = ler.nextLine();
 
         if (desafioQuatro.equalsIgnoreCase("Sim")) {
@@ -281,7 +281,7 @@ public class Desafios {
                 "receber", "**********", "para", "trabalhar", "com", "*****", "Quando", "chamada", "a", "******",
                 "executa", "sua", "******", "e", "retorna", "um", "*****", "(se", "necessário)." };
 
-        System.out.println("Deseja continuar jogando?");
+        System.out.println("Deseja jogar o desafio 5?");
         String desafioCinco = ler.nextLine();
 
         if (desafioCinco.equalsIgnoreCase("Sim")) {
