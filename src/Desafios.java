@@ -21,41 +21,72 @@ public class Desafios {
 
         System.out.println("Este é o desafio 1 ");
 
-        boolean completo = false;
-        while (!completo) {
+        int indiceDica = -1;
+        int letrasReveladas = 0;
+        int erros = 0;
+
+        while (true) {
+            indiceDica = -1;
+            for (int i = 0; i < operadorRelacional.length; i++) {
+                if (operadorRelacional[i].contains("*")) {
+                    indiceDica = i;
+                    break;
+                }
+            }
+            if (indiceDica == -1)
+                break;
+
+            String palavraDica = relacionalOculto[indiceDica];
+
+            String dica = "";
+            for (int j = 0; j < palavraDica.length(); j++) {
+                if (j < letrasReveladas)
+                    dica += palavraDica.charAt(j);
+                else
+                    dica += "*";
+            }
+
             System.out.println("\nFrase atual:");
-            for (String item : operadorRelacional) {
-                System.out.print(item + " ");
+            for (int i = 0; i < operadorRelacional.length; i++) {
+                if (i == indiceDica && operadorRelacional[i].contains("*"))
+                    System.out.print(dica + " ");
+                else
+                    System.out.print(operadorRelacional[i] + " ");
             }
             System.out.println();
 
             System.out.print("Digite uma palavra para tentar preencher: ");
             String palpite = ler.nextLine();
 
-            boolean acertou = false;
-            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                if ((operadorRelacional[i].contains("*")) && relacionalOculto[i].equalsIgnoreCase(palpite)) {
+            boolean acertouAlguma = false;
+            boolean acertouDica = false;
+
+            for (int i = 0; i < operadorRelacional.length; i++) {
+                if (operadorRelacional[i].contains("*") && relacionalOculto[i].equalsIgnoreCase(palpite)) {
                     operadorRelacional[i] = relacionalOculto[i];
-                    acertou = true;
+                    acertouAlguma = true;
+                    if (i == indiceDica)
+                        acertouDica = true;
                 }
             }
 
-            if (acertou) {
+            if (acertouAlguma) {
                 System.out.println("\nPalavra inserida.");
 
+                if (acertouDica) {
+                    letrasReveladas = 0;
+                    erros = 0;
+                }
             } else {
                 System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-            }
-
-            completo = true;
-            for (int i = 0; i < relacionalOculto.length && i < operadorRelacional.length; i++) {
-                if (operadorRelacional[i].contains("*")) {
-                    completo = false;
-                    break;
+                erros++;
+                if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
+                    letrasReveladas++;
+                    System.out.println("Dica: " + dica);
                 }
             }
-
         }
+
         Menu.limparTerminal("");
         System.out.println("\nParabéns! Você completou:");
         for (String item : operadorRelacional) {
@@ -64,7 +95,6 @@ public class Desafios {
         System.out.println();
 
         return umDesafio;
-
     }
 
     public static String desafioDois(String doisDesafio) {
@@ -81,58 +111,81 @@ public class Desafios {
                 "*****", "**", "será", "executado.", "Caso", "contrário", "o", "código", "dentro", "do", "*****",
                 "****", "será", "executado." };
 
-        System.out.println("Deseja jogar o desafio 2?");
-        String resposta = ler.nextLine();
+        System.out.println("Este é o desafio 2 ");
 
-        if (resposta.equalsIgnoreCase("Sim")) {
-            System.out.println("Este é o desafio 2 ");
+        int indiceDica = -1;
+        int letrasReveladas = 0;
+        int erros = 0;
 
-            boolean completoDois = false;
-            while (!completoDois) {
-                System.out.println("\nFrase atual:");
-                for (String item : ifElse) {
-                    System.out.print(item + " ");
+        while (true) {
+            indiceDica = -1;
+            for (int i = 0; i < ifElse.length; i++) {
+                if (ifElse[i].contains("*")) {
+                    indiceDica = i;
+                    break;
                 }
-                System.out.println();
+            }
+            if (indiceDica == -1)
+                break;
 
-                System.out.print("Digite uma palavra para tentar preencher: ");
-                String palpite = ler.nextLine();
+            String palavraDica = ifElseOculto[indiceDica];
 
-                boolean acertou = false;
-                for (int i = 0; i < ifElseOculto.length && i < ifElse.length; i++) {
-                    if ((ifElse[i].contains("*")) && ifElseOculto[i].equalsIgnoreCase(palpite)) {
-                        ifElse[i] = ifElseOculto[i];
-                        acertou = true;
-                    }
-                }
-
-                if (acertou) {
-                    System.out.println("\nPalavra inserida.");
-                } else {
-                    System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                }
-
-                completoDois = true;
-                for (int i = 0; i < ifElseOculto.length && i < ifElse.length; i++) {
-                    if (ifElse[i].contains("*")) {
-                        completoDois = false;
-                        break;
-                    }
-                }
-
+            String dica = "";
+            for (int j = 0; j < palavraDica.length(); j++) {
+                if (j < letrasReveladas)
+                    dica += palavraDica.charAt(j);
+                else
+                    dica += "*";
             }
 
-            Menu.limparTerminal("");
-            System.out.println("\nParabéns! Você completou:");
-            for (String item : ifElse) {
-                System.out.print(item + " ");
+            System.out.println("\nFrase atual:");
+            for (int i = 0; i < ifElse.length; i++) {
+                if (i == indiceDica && ifElse[i].contains("*"))
+                    System.out.print(dica + " ");
+                else
+                    System.out.print(ifElse[i] + " ");
             }
             System.out.println();
-        } else {
-            System.out.println("Saindo do jogo... Obrigado por jogar! :)");
+
+            System.out.print("Digite uma palavra para tentar preencher: ");
+            String palpite = ler.nextLine();
+
+            boolean acertouAlguma = false;
+            boolean acertouDica = false;
+
+            for (int i = 0; i < ifElse.length; i++) {
+                if (ifElse[i].contains("*") && ifElseOculto[i].equalsIgnoreCase(palpite)) {
+                    ifElse[i] = ifElseOculto[i];
+                    acertouAlguma = true;
+                    if (i == indiceDica)
+                        acertouDica = true;
+                }
+            }
+
+            if (acertouAlguma) {
+                System.out.println("\nPalavra inserida.");
+                if (acertouDica) {
+                    letrasReveladas = 0;
+                    erros = 0;
+                }
+            } else {
+                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                erros++;
+                if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
+                    letrasReveladas++;
+                    System.out.println("Dica: " + dica);
+                }
+            }
         }
 
-        return resposta;
+        Menu.limparTerminal("");
+        System.out.println("\nParabéns! Você completou:");
+        for (String item : ifElse) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+
+        return doisDesafio;
     }
 
     public static String desafioTres(String tresDesafio) {
@@ -147,58 +200,81 @@ public class Desafios {
                 "ela", "ajuda", "a", "***********", "tarefas", "***********", "como:", "***", "*****", "e",
                 "** *****" };
 
-        System.out.println("Deseja jogar o desafio 3?");
-        String desafioTres = ler.nextLine();
+        System.out.println("Este é o desafio 3 ");
 
-        if (desafioTres.equalsIgnoreCase("Sim")) {
-            System.out.println("Este é o desafio 3 ");
+        int indiceDica = -1;
+        int letrasReveladas = 0;
+        int erros = 0;
 
-            boolean completoTres = false;
-            while (!completoTres) {
-                System.out.println("\nFrase atual:");
-                for (String item : lacoRepeticao) {
-                    System.out.print(item + " ");
-                }
-                System.out.println();
-
-                System.out.print("Digite uma palavra para tentar preencher: ");
-                String palpite = ler.nextLine();
-
-                boolean acertou = false;
-                for (int i = 0; i < lacoRepeticaoOculto.length && i < lacoRepeticao.length; i++) {
-                    if ((lacoRepeticao[i].contains("*")) && lacoRepeticaoOculto[i].equalsIgnoreCase(palpite)) {
-                        lacoRepeticao[i] = lacoRepeticaoOculto[i];
-                        acertou = true;
-                    }
-                }
-
-                if (acertou) {
-                    System.out.println("\nPalavra inserida.");
-                } else {
-                    System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                }
-
-                completoTres = true;
-                for (int i = 0; i < lacoRepeticaoOculto.length && i < lacoRepeticao.length; i++) {
-                    if (lacoRepeticao[i].contains("*")) {
-                        completoTres = false;
-                        break;
-                    }
+        while (true) {
+            indiceDica = -1;
+            for (int i = 0; i < lacoRepeticao.length; i++) {
+                if (lacoRepeticao[i].contains("*")) {
+                    indiceDica = i;
+                    break;
                 }
             }
+            if (indiceDica == -1)
+                break;
 
-            Menu.limparTerminal("");
-            System.out.println("\nParabéns! Você completou:");
-            for (String item : lacoRepeticao) {
-                System.out.print(item + " ");
+            String palavraDica = lacoRepeticaoOculto[indiceDica];
+
+            String dica = "";
+            for (int j = 0; j < palavraDica.length(); j++) {
+                if (j < letrasReveladas)
+                    dica += palavraDica.charAt(j);
+                else
+                    dica += "*";
+            }
+
+            System.out.println("\nFrase atual:");
+            for (int i = 0; i < lacoRepeticao.length; i++) {
+                if (i == indiceDica && lacoRepeticao[i].contains("*"))
+                    System.out.print(dica + " ");
+                else
+                    System.out.print(lacoRepeticao[i] + " ");
             }
             System.out.println();
-        } else {
-            System.out.println("Saindo do jogo... Obrigado por jogar! :)");
 
+            System.out.print("Digite uma palavra para tentar preencher: ");
+            String palpite = ler.nextLine();
+
+            boolean acertouAlguma = false;
+            boolean acertouDica = false;
+
+            for (int i = 0; i < lacoRepeticao.length; i++) {
+                if (lacoRepeticao[i].contains("*") && lacoRepeticaoOculto[i].equalsIgnoreCase(palpite)) {
+                    lacoRepeticao[i] = lacoRepeticaoOculto[i];
+                    acertouAlguma = true;
+                    if (i == indiceDica)
+                        acertouDica = true;
+                }
+            }
+
+            if (acertouAlguma) {
+                System.out.println("\nPalavra inserida.");
+                if (acertouDica) {
+                    letrasReveladas = 0;
+                    erros = 0;
+                }
+            } else {
+                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                erros++;
+                if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
+                    letrasReveladas++;
+                    System.out.println("Dica: " + dica);
+                }
+            }
         }
 
-        return desafioTres;
+        Menu.limparTerminal("");
+        System.out.println("\nParabéns! Você completou:");
+        for (String item : lacoRepeticao) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+
+        return tresDesafio;
     }
 
     public static String desafioQuatro(String quatroDesafio) {
@@ -213,58 +289,81 @@ public class Desafios {
                 "possui", "um", "*******", "****", "e", "os", "elementos", "são", "***********", "de", "forma",
                 "**********" };
 
-        System.out.println("Deseja jogar o desafio 4?");
-        String desafioQuatro = ler.nextLine();
+        System.out.println("Este é o desafio 4 ");
 
-        if (desafioQuatro.equalsIgnoreCase("Sim")) {
-            System.out.println("Este é o desafio 4 ");
+        int indiceDica = -1;
+        int letrasReveladas = 0;
+        int erros = 0;
 
-            boolean completoQuatro = false;
-            while (!completoQuatro) {
-                System.out.println("\nFrase atual:");
-                for (String item : vetor) {
-                    System.out.print(item + " ");
-                }
-                System.out.println();
-
-                System.out.print("Digite uma palavra para tentar preencher: ");
-                String palpite = ler.nextLine();
-
-                boolean acertou = false;
-                for (int i = 0; i < vetorOculto.length && i < vetor.length; i++) {
-                    if ((vetor[i].contains("*")) && vetorOculto[i].equalsIgnoreCase(palpite)) {
-                        vetor[i] = vetorOculto[i];
-                        acertou = true;
-                    }
-                }
-
-                if (acertou) {
-                    System.out.println("\nPalavra inserida.");
-                } else {
-                    System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                }
-
-                completoQuatro = true;
-                for (int i = 0; i < vetorOculto.length && i < vetor.length; i++) {
-                    if (vetor[i].contains("*")) {
-                        completoQuatro = false;
-                        break;
-                    }
+        while (true) {
+            indiceDica = -1;
+            for (int i = 0; i < vetor.length; i++) {
+                if (vetor[i].contains("*")) {
+                    indiceDica = i;
+                    break;
                 }
             }
+            if (indiceDica == -1)
+                break;
 
-            Menu.limparTerminal("");
-            System.out.println("\nParabéns! Você completou:");
-            for (String item : vetor) {
-                System.out.print(item + " ");
+            String palavraDica = vetorOculto[indiceDica];
+
+            String dica = "";
+            for (int j = 0; j < palavraDica.length(); j++) {
+                if (j < letrasReveladas)
+                    dica += palavraDica.charAt(j);
+                else
+                    dica += "*";
+            }
+
+            System.out.println("\nFrase atual:");
+            for (int i = 0; i < vetor.length; i++) {
+                if (i == indiceDica && vetor[i].contains("*"))
+                    System.out.print(dica + " ");
+                else
+                    System.out.print(vetor[i] + " ");
             }
             System.out.println();
-        } else {
-            System.out.println("Saindo do jogo... Obrigado por jogar! :)");
 
+            System.out.print("Digite uma palavra para tentar preencher: ");
+            String palpite = ler.nextLine();
+
+            boolean acertouAlguma = false;
+            boolean acertouDica = false;
+
+            for (int i = 0; i < vetor.length; i++) {
+                if (vetor[i].contains("*") && vetorOculto[i].equalsIgnoreCase(palpite)) {
+                    vetor[i] = vetorOculto[i];
+                    acertouAlguma = true;
+                    if (i == indiceDica)
+                        acertouDica = true;
+                }
+            }
+
+            if (acertouAlguma) {
+                System.out.println("\nPalavra inserida.");
+                if (acertouDica) {
+                    letrasReveladas = 0;
+                    erros = 0;
+                }
+            } else {
+                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                erros++;
+                if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
+                    letrasReveladas++;
+                    System.out.println("Dica: " + dica);
+                }
+            }
         }
 
-        return desafioQuatro;
+        Menu.limparTerminal("");
+        System.out.println("\nParabéns! Você completou:");
+        for (String item : vetor) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+
+        return quatroDesafio;
     }
 
     public static String desafioCinco(String cincoDesafio) {
@@ -281,56 +380,80 @@ public class Desafios {
                 "receber", "**********", "para", "trabalhar", "com", "*****", "Quando", "chamada", "a", "******",
                 "executa", "sua", "******", "e", "retorna", "um", "*****", "(se", "necessário)." };
 
-        System.out.println("Deseja jogar o desafio 5?");
-        String desafioCinco = ler.nextLine();
+        System.out.println("Este é o desafio 5 ");
 
-        if (desafioCinco.equalsIgnoreCase("Sim")) {
-            System.out.println("Este é o desafio 5 ");
+        int indiceDica = -1;
+        int letrasReveladas = 0;
+        int erros = 0;
 
-            boolean completoCinco = false;
-            while (!completoCinco) {
-                System.out.println("\nFrase atual:");
-                for (String item : funcao) {
-                    System.out.print(item + " ");
-                }
-                System.out.println();
-
-                System.out.print("Digite uma palavra para tentar preencher: ");
-                String palpite = ler.nextLine();
-
-                boolean acertou = false;
-                for (int i = 0; i < funcaoOculto.length && i < funcao.length; i++) {
-                    if ((funcao[i].contains("*")) && funcaoOculto[i].equalsIgnoreCase(palpite)) {
-                        funcao[i] = funcaoOculto[i];
-                        acertou = true;
-                    }
-                }
-
-                if (acertou) {
-                    System.out.println("\nPalavra inserida.");
-                } else {
-                    System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
-                }
-
-                completoCinco = true;
-                for (int i = 0; i < funcaoOculto.length && i < funcao.length; i++) {
-                    if (funcao[i].contains("*")) {
-                        completoCinco = false;
-                        break;
-                    }
+        while (true) {
+            indiceDica = -1;
+            for (int i = 0; i < funcao.length; i++) {
+                if (funcao[i].contains("*")) {
+                    indiceDica = i;
+                    break;
                 }
             }
+            if (indiceDica == -1)
+                break;
 
-            Menu.limparTerminal("");
-            System.out.println("\nParabéns! Você completou:");
-            for (String item : funcao) {
-                System.out.print(item + " ");
+            String palavraDica = funcaoOculto[indiceDica];
+
+            String dica = "";
+            for (int j = 0; j < palavraDica.length(); j++) {
+                if (j < letrasReveladas)
+                    dica += palavraDica.charAt(j);
+                else
+                    dica += "*";
+            }
+
+            System.out.println("\nFrase atual:");
+            for (int i = 0; i < funcao.length; i++) {
+                if (i == indiceDica && funcao[i].contains("*"))
+                    System.out.print(dica + " ");
+                else
+                    System.out.print(funcao[i] + " ");
             }
             System.out.println();
-        } else {
-            System.out.println("Saindo do jogo... Obrigado por jogar! :)");
 
+            System.out.print("Digite uma palavra para tentar preencher: ");
+            String palpite = ler.nextLine();
+
+            boolean acertouAlguma = false;
+            boolean acertouDica = false;
+
+            for (int i = 0; i < funcao.length; i++) {
+                if (funcao[i].contains("*") && funcaoOculto[i].equalsIgnoreCase(palpite)) {
+                    funcao[i] = funcaoOculto[i];
+                    acertouAlguma = true;
+                    if (i == indiceDica)
+                        acertouDica = true;
+                }
+            }
+
+            if (acertouAlguma) {
+                System.out.println("\nPalavra inserida.");
+                if (acertouDica) {
+                    letrasReveladas = 0;
+                    erros = 0;
+                }
+            } else {
+                System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                erros++;
+                if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
+                    letrasReveladas++;
+                    System.out.println("Dica: " + dica);
+                }
+            }
         }
-        return desafioCinco;
+
+        Menu.limparTerminal("");
+        System.out.println("\nParabéns! Você completou:");
+        for (String item : funcao) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+
+        return cincoDesafio;
     }
 }
