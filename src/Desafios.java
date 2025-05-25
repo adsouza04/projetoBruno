@@ -1,4 +1,7 @@
 import java.util.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class Desafios {
 
@@ -72,6 +75,7 @@ public class Desafios {
 
             if (acertouAlguma) {
                 System.out.println("\nPalavra inserida.");
+                tocarSom("e:/projeto_bruno/som.wav/bells_2.wav");
 
                 if (acertouDica) {
                     letrasReveladas = 0;
@@ -79,6 +83,7 @@ public class Desafios {
                 }
             } else {
                 System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                tocarSom("e:/projeto_bruno/som.wav/error.wav");
                 erros++;
                 if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
                     letrasReveladas++;
@@ -89,6 +94,7 @@ public class Desafios {
 
         Menu.limparTerminal("");
         System.out.println("\nParabéns! Você completou:");
+        tocarSom("e:/projeto_bruno/som.wav/tada.wav");
         for (String item : operadorRelacional) {
             System.out.print(item + " ");
         }
@@ -164,12 +170,14 @@ public class Desafios {
 
             if (acertouAlguma) {
                 System.out.println("\nPalavra inserida.");
+                tocarSom("e:/projeto_bruno/som.wav/bells_2.wav");
                 if (acertouDica) {
                     letrasReveladas = 0;
                     erros = 0;
                 }
             } else {
                 System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                tocarSom("e:/projeto_bruno/som.wav/error.wav");
                 erros++;
                 if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
                     letrasReveladas++;
@@ -180,6 +188,7 @@ public class Desafios {
 
         Menu.limparTerminal("");
         System.out.println("\nParabéns! Você completou:");
+        tocarSom("e:/projeto_bruno/som.wav/tada.wav");
         for (String item : ifElse) {
             System.out.print(item + " ");
         }
@@ -253,12 +262,14 @@ public class Desafios {
 
             if (acertouAlguma) {
                 System.out.println("\nPalavra inserida.");
+                tocarSom("e:/projeto_bruno/som.wav/bells_2.wav");
                 if (acertouDica) {
                     letrasReveladas = 0;
                     erros = 0;
                 }
             } else {
                 System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                tocarSom("e:/projeto_bruno/som.wav/error.wav");
                 erros++;
                 if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
                     letrasReveladas++;
@@ -269,6 +280,7 @@ public class Desafios {
 
         Menu.limparTerminal("");
         System.out.println("\nParabéns! Você completou:");
+        tocarSom("e:/projeto_bruno/som.wav/tada.wav");
         for (String item : lacoRepeticao) {
             System.out.print(item + " ");
         }
@@ -342,12 +354,14 @@ public class Desafios {
 
             if (acertouAlguma) {
                 System.out.println("\nPalavra inserida.");
+                tocarSom("e:/projeto_bruno/som.wav/bells_2.wav");
                 if (acertouDica) {
                     letrasReveladas = 0;
                     erros = 0;
                 }
             } else {
                 System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                tocarSom("e:/projeto_bruno/som.wav/error.wav");
                 erros++;
                 if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
                     letrasReveladas++;
@@ -358,6 +372,7 @@ public class Desafios {
 
         Menu.limparTerminal("");
         System.out.println("\nParabéns! Você completou:");
+        tocarSom("e:/projeto_bruno/som.wav/tada.wav");
         for (String item : vetor) {
             System.out.print(item + " ");
         }
@@ -433,12 +448,14 @@ public class Desafios {
 
             if (acertouAlguma) {
                 System.out.println("\nPalavra inserida.");
+                tocarSom("e:/projeto_bruno/som.wav/bells_2.wav");
                 if (acertouDica) {
                     letrasReveladas = 0;
                     erros = 0;
                 }
             } else {
                 System.out.println("\nNenhuma palavra corresponde ao seu palpite.");
+                tocarSom("e:/projeto_bruno/som.wav/error.wav");
                 erros++;
                 if (erros % 5 == 0 && letrasReveladas < palavraDica.length()) {
                     letrasReveladas++;
@@ -449,11 +466,23 @@ public class Desafios {
 
         Menu.limparTerminal("");
         System.out.println("\nParabéns! Você completou:");
+        tocarSom("e:/projeto_bruno/som.wav/tada.wav");
         for (String item : funcao) {
             System.out.print(item + " ");
         }
         System.out.println();
 
         return cincoDesafio;
+    }
+
+    public static void tocarSom(String caminho) {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new java.io.File(caminho));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }
