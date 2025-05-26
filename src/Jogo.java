@@ -8,7 +8,7 @@ public class Jogo {
         String menu = Menu.MostrarMenu("");
 
         do {
-            System.out.print("Escolha uma opção: ");
+            System.out.print("\nEscolha uma opção: ");
             escolha = ler.nextLine();
             System.out.println();
 
